@@ -1,0 +1,6 @@
+*.DS_Store
+*.gz
+_site/*
+*.ipynb_checkpoints
+.sass-cache
+datasets
