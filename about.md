@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Genomics, Farming, Nutrition
+Genomics and Farming
