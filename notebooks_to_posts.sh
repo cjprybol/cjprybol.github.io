@@ -10,7 +10,7 @@ jupyter nbconvert --output-dir _posts --to markdown post_notebooks/*
 # which messes with the header metadata used by Jekyll. We can fix this by removing the first line of each
 # markdown file in place
 for filename in _posts/*; do
-	echo $filename
+	# echo $filename
 	# sed -i '1d' "$filename"
 	tail -n+2 "$filename" > "$filename.tmp" && mv "$filename.tmp" "$filename"
 done
