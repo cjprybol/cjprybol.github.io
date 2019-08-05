@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Genomics and Farming
+Soil Microbiome and Regenerative Agriculture
