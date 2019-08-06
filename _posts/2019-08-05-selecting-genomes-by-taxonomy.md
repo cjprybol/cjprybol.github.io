@@ -6,7 +6,7 @@ author: Cameron Prybol
 
 ---
 
-In the [previous post](/downloading-refseq-genomes.html) I showed how to download reference genomes from the RefSeq database. The next step is to layer taxonomy information onto the genome information. This will allow us survey the taxonomical breakdown of organisms represented within the RefSeq reference genomes. It will also allow us to randomly sample genomes of interest uniformly from each branch of the taxonomy tree. Specifically, I would like to sample uniformly across the kingdoms of life (e.g. Animalia, Plantae, Fungi, Protista, Archaea, Bacteria, and Viruses)(different authorities utilize different kingdoms of life so your preferred breakdown may be different!)
+In the [previous post](/downloading-refseq-genomes.html) I showed how to download reference genomes from the RefSeq database. The next step is to layer taxonomy information onto the genome information. This will allow us survey the taxonomic breakdown of organisms represented within the RefSeq reference genomes. It will also allow us to randomly sample genomes of interest uniformly from each branch of the taxonomy tree. Specifically, I would like to sample uniformly across the kingdoms of life (e.g. Animalia, Plantae, Fungi, Protista, Archaea, Bacteria, and Viruses)(different authorities utilize different kingdoms of life so your preferred breakdown may be different!)
 
 We first need reference taxonomy information from NCBI available [here](ftp://ftp.ncbi.nih.gov/pub/taxonomy/). In the associated [README](ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump_readme.txt), we can see that the taxonomy information is available as a compressed archive (in .zip, .tar.gz, and .tar.Z formats) and descriptions of what is contained in each file within the taxonomy archive. I'll download the .tar.gz archive and decompress it.
 
@@ -251,4 +251,4 @@ end
     Viruses 		Norwalk virus 		GCF_000868425.1_ViralProj17577_genomic.fna.gz
 
 
-That's it for this post. These genomes will be utilized in future posts to demonstrate kmer frequency profiles of genomes and probablistic genome assembly approaches!
+That's it for this post, but these genomes will be utilized in future posts!
