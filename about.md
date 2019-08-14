@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Soil Microbiome and Regenerative Agriculture
+Soil Metagenomics
