@@ -31,4 +31,4 @@ mv $FASTA.K*.counts.histogram.svg ../../assets/images/
 ![](../assets/images/GCF_000146045.2_R64_genomic.fna.K29.counts.histogram.svg)
 ![](../assets/images/GCF_000146045.2_R64_genomic.fna.K31.counts.histogram.svg)
 
-We again see the log-log relationship described earlier, with a monotonically decreasing pattern observed for k >= 11, and with some high coverage outliers (repetitive kmers) that are prominent in the data until k >= 29 when their repetitive structure is broken by including additional information from neighboring sequence.
+We again see the log-log relationship described earlier, with a monotonically decreasing pattern observed for k >= 11, a stable pattern observed for k >= 13, and with some high coverage outliers (repetitive kmers) that are prominent in the data until k >= 29 when their repetitive structure is broken by including additional information from neighboring sequence.
