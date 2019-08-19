@@ -41,3 +41,5 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - datasets/
+  - draft_notebooks/
+  - post_notebooks/
