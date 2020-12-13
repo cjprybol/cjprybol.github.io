@@ -1,4 +1,3 @@
----
 layout: post  
 title:  Downloading RefSeq Genomes  
 date: 2019-08-04  

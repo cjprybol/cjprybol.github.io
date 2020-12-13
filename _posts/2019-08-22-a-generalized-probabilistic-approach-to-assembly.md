@@ -1,4 +1,3 @@
----
 layout: post  
 title: A Generalized Probabilistic Approach to Assembly  
 date: 2019-08-22  

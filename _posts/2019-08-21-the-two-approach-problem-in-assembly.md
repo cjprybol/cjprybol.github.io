@@ -1,4 +1,3 @@
----
 layout: post  
 title: The Two Approach Problem in Assembly  
 date: 2019-08-21  

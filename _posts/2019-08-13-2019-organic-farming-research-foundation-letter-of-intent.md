@@ -1,4 +1,3 @@
----
 layout: post  
 title: 2019 Organic Farming Research Foundation Letter of Intent  
 date: 2019-08-13  

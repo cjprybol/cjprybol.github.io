@@ -1,4 +1,3 @@
----
 layout: post  
 title:  Using Overlaps to Assemble Sequences  
 date:   2019-08-19  
