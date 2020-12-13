@@ -1,8 +1,10 @@
----
-layout: page
----
-<meta charset="utf-8">
-<h1>{{ page.title }}</h1>
-<p>{{ page.author }} • {{ page.date | date_to_string }}</p>
-
-{{ content }}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>
