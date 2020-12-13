@@ -1,8 +1,4 @@
-layout: post  
-title: Indexing Kmers  
-date: 2020-12-05  
-author: Cameron Prybol  
-
+layout: post
 ---
 
 - Assume that you have a known kmer length, k, and a known alphabet (either DNA nucleotides ACGT or Amino Acids)
