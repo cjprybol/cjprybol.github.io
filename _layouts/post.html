@@ -1,7 +1,8 @@
 ---
 layout: page
 ---
+<meta charset="utf-8">
 <h1>{{ page.title }}</h1>
-<p>{{ page.author }} • {{ page.date | date: "%Y-%m-%d" }}</p>
+<p>{{ page.author }} • {{ page.date | date_to_string }}</p>
 
 {{ content }}
