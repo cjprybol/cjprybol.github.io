@@ -49,6 +49,6 @@ exclude:
    - vendor/cache/
    - vendor/gems/
    - vendor/ruby/
-   - _drafts/*.ipynb
-   - post_notebooks/*.ipynb
+   - _post_notebooks/
+   - _draft_noteboos/
 
