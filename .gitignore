@@ -4,3 +4,4 @@ _site/*
 *.ipynb_checkpoints
 .sass-cache
 datasets
+.jekyll-cache/*
