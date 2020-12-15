@@ -51,4 +51,5 @@ exclude:
    - vendor/ruby/
    - _post_notebooks/
    - _draft_noteboos/
+   - update_site.*
 
