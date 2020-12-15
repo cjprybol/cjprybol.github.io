@@ -9,7 +9,7 @@ for target_directory in ("_posts", "_drafts")
         open(target_file, "w") do io
             for line in eachline(`jupyter nbconvert --to markdown $notebooks_directory/$notebook --stdout`)
                 if occursin(begin_codeblock_regex, line)
-                    line = "{% highlight " * match(begin_codeblock_regex, line).captures[1] * " linenos %}"
+                    line = "{% highlight " * match(begin_codeblock_regex, line).captures[1] * " %}"
                 elseif occursin(end_codeblock_regex, line)
                     line = "{% endhighlight %}"
                 end
@@ -21,5 +21,3 @@ for target_directory in ("_posts", "_drafts")
 end
 
 run(`jupyter nbconvert --to script update_site.ipynb`)
-
-
