@@ -1,7 +1,5 @@
 ---
 layout: post  
-title:  "example"  
-date:   2020-12-15  
 ---
 
 Here is some introductory text
@@ -10,14 +8,4 @@ We can describe the goals/objectives of the post to let people know what they ar
 
 {% highlight julia %}
 # here is some Julia code
-a = 1
-b = 2
-a + b
 {% endhighlight %}
-
-
-
-
-    3
-
-

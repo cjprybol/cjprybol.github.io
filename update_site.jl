@@ -2,7 +2,13 @@ begin_codeblock_regex = r"^```(.+)$"
 end_codeblock_regex = r"^```$"
 
 for target_directory in ("_posts", "_drafts")
+    
+    # clear out any existing content
+    rm(target_directory, recursive=true)
+    mkpath(target_directory)
+    
     notebooks_directory = target_directory[1:end-1] * "_notebooks"
+    
     notebooks = filter(x -> occursin(r".+\.ipynb$", x), readdir(notebooks_directory))
     for notebook in notebooks
         target_file = "$target_directory/" * replace(notebook, r"\.ipynb$" => ".md")
@@ -13,7 +19,6 @@ for target_directory in ("_posts", "_drafts")
                 elseif occursin(end_codeblock_regex, line)
                     line = "{% endhighlight %}"
                 end
-#                 display(line)
                 println(io, line)
             end  
         end
