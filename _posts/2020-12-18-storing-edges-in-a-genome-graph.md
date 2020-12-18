@@ -170,7 +170,7 @@ Some genome assemblers don't store the edges at all. Instead, the algorithms inf
 kmer_a[2:end] == kmer_b[1:end-1]
 ```
 
-which is that the` k-1` length _suffix_ of `kmer_a` is equal to the `k-1` length _prefix_ of `kmer_b` where `kmer_a` and `kmer_b` can be in either forward or reverse_complement orientations
+which is that the `k-1` length _suffix_ of `kmer_a` is equal to the `k-1` length _prefix_ of `kmer_b` where `kmer_a` and `kmer_b` can be in either forward or reverse_complement orientations
 
 Below, we'll show the same dataset represented with a graph that explicitly stores all of the possible kmer connections that would be inferred as potentially existing in some frameworks
 
