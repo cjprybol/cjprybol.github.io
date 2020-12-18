@@ -1,6 +1,14 @@
 begin_codeblock_regex = r"^```(.+)$"
 end_codeblock_regex = r"^```$"
 
+problem_lines = [
+#     "Unable to load WebIO. Please make sure WebIO works for your Jupyter client.",
+#     "<!DOCTYPE html>",
+#     "For troubleshooting, please see <a href=\"https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/\">",
+#     "the WebIO/IJulia documentation</a>."
+#     "display(p)"
+]
+
 for target_directory in ("_posts", "_drafts")
     
     # clear out any existing content
@@ -14,7 +22,9 @@ for target_directory in ("_posts", "_drafts")
         target_file = "$target_directory/" * replace(notebook, r"\.ipynb$" => ".md")
         open(target_file, "w") do io
             for line in eachline(`jupyter nbconvert --to markdown $notebooks_directory/$notebook --stdout`)
-                println(io, line)
+                if !any(x -> occursin(x, line), problem_lines)
+                    println(io, line)                
+                end
             end  
         end
     end
@@ -22,3 +32,5 @@ end
 if isinteractive()
     run(`jupyter nbconvert --to script update_site.ipynb`)
 end
+
+
