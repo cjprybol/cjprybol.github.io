@@ -14,11 +14,11 @@ for target_directory in ("_posts", "_drafts")
         target_file = "$target_directory/" * replace(notebook, r"\.ipynb$" => ".md")
         open(target_file, "w") do io
             for line in eachline(`jupyter nbconvert --to markdown $notebooks_directory/$notebook --stdout`)
-                if occursin(begin_codeblock_regex, line)
-                    line = "{% highlight " * match(begin_codeblock_regex, line).captures[1] * " %}"
-                elseif occursin(end_codeblock_regex, line)
-                    line = "{% endhighlight %}"
-                end
+#                 if occursin(begin_codeblock_regex, line)
+#                     line = "{% highlight " * match(begin_codeblock_regex, line).captures[1] * " %}"
+#                 elseif occursin(end_codeblock_regex, line)
+#                     line = "{% endhighlight %}"
+#                 end
                 println(io, line)
             end  
         end

@@ -5,7 +5,7 @@ layout: post
 In this post, I will demonstrate two methods for how edges could be stored in a graph genome, and argue for the use of explicitly storing observed edges rather than inferring possible edges during runtime
 
 
-{% highlight julia %}
+```julia
 import Pkg
 pkgs = [
     "DataStructures",
@@ -25,7 +25,7 @@ for pkg in pkgs
 end
 
 Plots.plotlyjs()
-{% endhighlight %}
+```
 
     [32m[1m  Resolving[22m[39m package versions...
     [32m[1mUpdating[22m[39m `~/.julia/environments/v1.5/Project.toml`
@@ -41,9 +41,9 @@ Plots.plotlyjs()
 
 
 
-{% highlight julia %}
+```julia
 Random.seed!(0)
-{% endhighlight %}
+```
 
 
 
@@ -53,9 +53,9 @@ Random.seed!(0)
 
 
 
-{% highlight julia %}
+```julia
 genome = BioSequences.randdnaseq(10)
-{% endhighlight %}
+```
 
 
 
@@ -66,9 +66,9 @@ genome = BioSequences.randdnaseq(10)
 
 
 
-{% highlight julia %}
+```julia
 k = 3
-{% endhighlight %}
+```
 
 
 
@@ -78,9 +78,9 @@ k = 3
 
 
 
-{% highlight julia %}
+```julia
 kmer_counts = StatsBase.countmap(BioSequences.canonical(kmer.fw) for kmer in BioSequences.each(BioSequences.DNAMer{k}, genome))
-{% endhighlight %}
+```
 
 
 
@@ -96,11 +96,11 @@ kmer_counts = StatsBase.countmap(BioSequences.canonical(kmer.fw) for kmer in Bio
 
 
 
-{% highlight julia %}
+```julia
 kmers = DataStructures.OrderedDict(
     kmer => (index = index, count = count) for (index, (kmer, count)) in enumerate(sort(kmer_counts))
 )
-{% endhighlight %}
+```
 
 
 
@@ -116,9 +116,9 @@ kmers = DataStructures.OrderedDict(
 
 
 
-{% highlight julia %}
+```julia
 K = length(kmers)
-{% endhighlight %}
+```
 
 
 
@@ -129,15 +129,15 @@ K = length(kmers)
 
 In this basic example, we can see that if we iterate through all kmer connections in our original dataset to determine the set of edges, we are able to resolve a single path that will reconstruct the original sequence.
 
-{% endhighlight %}
+```
 1 <-> 6 <-> 3 <-> 3 <-> 6 <-> 2 <-> 4 <-> 5
-{% endhighlight %}
+```
 
 While that sequence can be read in the forward or reverse-complement orientation (i.e. we can reverse the order in which we visit each node), that path visits each node at least once and integrates all nodes in the fewest # of steps.
 The length of the path will also generate a sequence equal to the length of our original genome.
 
 
-{% highlight julia %}
+```julia
 graph = LightGraphs.SimpleGraph(K)
 for i in 1:length(genome)-k
     a_to_b_connection = genome[i:i+k]
@@ -154,7 +154,7 @@ GraphRecipes.graphplot(
     names = 1:K,
     markersize = 0.15,
     fontsize=12)
-{% endhighlight %}
+```
 
 
 
@@ -1378,18 +1378,18 @@ GraphRecipes.graphplot(
 The algorithmic runtime of assessing the edges of a given graph using the above framework is proportional to the size of the dataset, not to the # of kmers. Determining the edges requires reading through the entire dataset, which we've already done once in order to count the kmers and determine the nodes of the graph.
 
 Some other genome assemblers (CITATION NEEDED) don't actually store the edges at all. Instead, the algorithms infer whether an edge could exist based on whether the two kmers are neighbors. We define "neighbors" as two kmers that can satisfiy the condition
-{% endhighlight %}
+```
 kmer_a[1:end-1] == kmer_b[2:end]
 
 where kmer_a and kmer_b can each be in their forward or reverse complement orientation
-{% endhighlight %}
+```
 
 
 
 These possible edges can be stored directly as well to reduce runtime at the cost of storing more information. However, if we store all possible edges, we add additional graph complexity that isn't necessarily supported by the data. See below where we add edges for every possible edge that could occur, rather than only those that were actually observed.
 
 
-{% highlight julia %}
+```julia
 graph = LightGraphs.SimpleGraph(K)
 # This may be wrong too. We shouldn't necessarily add edges just becuase they COULD exist
 # Maybe we want to only add edges when they DO exist
@@ -1409,7 +1409,7 @@ GraphRecipes.graphplot(
     names = 1:K,
     markersize = 0.15,
     fontsize=12)
-{% endhighlight %}
+```
 
 
 
