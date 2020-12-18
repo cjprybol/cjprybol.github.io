@@ -7,3 +7,4 @@ _site/*
 datasets
 .jekyll-cache/*
 */.jekyll-cache/*
+_drafts/*
