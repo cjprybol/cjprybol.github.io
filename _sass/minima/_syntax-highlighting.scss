@@ -6,10 +6,12 @@
   @extend %vertical-rhythm;
 
   .language-plaintext.highlighter-rouge & {
-    background: #f8f8ff;
+//     background: #f8f8ff;
+      background: white;
   }
   .highlighter-rouge & {
-    background: #eef;
+//     background: #eef;
+    background: #f8f8ff;
   }
 
   .c     { color: #998; font-style: italic } // Comment
