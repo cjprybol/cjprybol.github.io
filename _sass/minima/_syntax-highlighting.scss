@@ -6,6 +6,9 @@
   @extend %vertical-rhythm;
 
   .language-plaintext.highlighter-rouge & {
+    background: #f8f8ff;
+  }
+  .highlighter-rouge & {
     background: #eef;
   }
 
