@@ -5,7 +5,7 @@
   background: #fff;
   @extend %vertical-rhythm;
 
-  .highlighter-rouge & {
+  .language-plaintext.highlighter-rouge & {
     background: #eef;
   }
 
