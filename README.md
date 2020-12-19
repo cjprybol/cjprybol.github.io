@@ -11,3 +11,8 @@ and give it a date!
 Run `julia update_site.jl` to update `_posts` and `_drafts`
 
 Git commit && git push and check it live!
+
+Very important add-on
+```
+jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+```
