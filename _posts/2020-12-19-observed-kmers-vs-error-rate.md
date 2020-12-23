@@ -10,8 +10,8 @@ The reasoning for this is as follows:
 For every $$k$$-length subsequence in a genome that we can observe, there are $$(k^4)-1$$ possible errors that can be made.
 Given enough observations, we will eventually observe all of those possible errors.
 
-While all techniques or assemblying a genome from observed sequences have some method for seperating "true" kmers from erroneous ones, we'd like to resolve errors using the smallest $$k$$ length possible.
-By minimizing $$k$$, we minimize the number of possible erronous kmers that we have to deal with, saving time and computational resources.
+While all techniques or assembling a genome from observed sequences have some method for separating "true" kmers from erroneous ones, we'd like to resolve errors using the smallest $$k$$ length possible.
+By minimizing $$k$$, we minimize the number of possible erroneous kmers that we have to deal with, saving time and computational resources.
 
 Here we will simulate a few genetic sequences and investigate the scaling patterns of erroneous vs "true" kmers at reasonable depth-of-coverage and error rates.
 
@@ -337,7 +337,7 @@ end
 
 We are able to see some interesting scaling differences very quickly!
 
-Note that the lowest trendline on these plot indicates the number "true" kmers.
+Note that the lowest trend line on these plot indicates the number "true" kmers.
 Any value above the lowest is equal to $$\text{"true"} + \text{erroneous}$$
 
 The top two lines in each of these plots have "cross" marker shapes, indicating 1000x coverage.
@@ -443,7 +443,7 @@ In the above plots, we can divergence points for each of the sequence lengths:
 - 100,000bp
     - 8
 
-I don't know if this pattern will hold in in practice on real data (these sequencs are simulated without any attention paid to real genetic grammar), but these breakpoints appear to follow a `log4(sequence_length)` pattern:
+I don't know if this pattern will hold in in practice on real data (these sequences are simulated without any attention paid to real genetic grammar), but these breakpoints appear to follow a `log4(sequence_length)` pattern:
 
 
 ```julia

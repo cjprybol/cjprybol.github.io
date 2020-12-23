@@ -161,11 +161,11 @@ The length of the path will also generate a sequence equal to the length of our 
 
 The algorithmic runtime of assessing the edges of a given graph using the above framework is proportional to the size of the dataset:
 
-$$\text{runtime} \propto (\text{# of oberseved sequences} * \text{length of sequences})$$
+$$\text{runtime} \propto (\text{# of observed sequences} * \text{length of sequences})$$
 
-Determining the edges requires evaluating each pairwise kmer cominbation in the dataset, which we've already done (at least) once in order to count the kmers.
+Determining the edges requires evaluating each pairwise kmer combination in the dataset, which we've already done (at least) once in order to count the kmers.
 
-Some genome assemblers don't store the edges at all. Instead, the algorithms infer whether an edge could exist based on whether the two kmers are neighbors. We define "neighbors" as two kmers that can satisfiy the condition
+Some genome assemblers don't store the edges at all. Instead, the algorithms infer whether an edge could exist based on whether the two kmers are neighbors. We define "neighbors" as two kmers that can satisfy the condition
 ```
 kmer_a[2:end] == kmer_b[1:end-1]
 ```
