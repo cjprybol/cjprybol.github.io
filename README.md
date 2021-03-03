@@ -16,3 +16,20 @@ Very important add-on
 ```
 jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 ```
+
+Relevant old posts to grab:
+https://github.com/cjprybol/static-demo/blob/master/iterative-assembly.ipynb
+https://github.com/cjprybol/Thesis/blob/master/manuscript/manuscript.md
+https://github.com/cjprybol/Thesis/blob/master/dev/notes/thesis.md
+
+Convert from GFA to cytoscape.js
+https://github.com/cjprybol/sequence-graphs/blob/master/src/old/gfa2cyto-js.jl
+
+Convert from simplified graph to GFA
+https://github.com/cjprybol/sequence-graphs/blob/master/src/write-GFA.jl
+
+TODO:
+- Add functions to simplify graph
+- Add function to write kmer graph to GFA
+- Add function to write simplified graph to GFA
+- Add function to call Bandage and show output
